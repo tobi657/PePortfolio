@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan Smith</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c21e7ea318.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "CbN1I85o8op-PhFHP",
+      });
+   })();
+</script>
+  </head>
+
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="assets/logo-no-bckgrnd.png" alts="" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i class="fa-solid fa-circle-half-stroke"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title"><b class="blue">I'm Jordan</b></h1>
+          <p class="header__para">
+            Currently in the process of becoming a full-fledged
+            <b class="blue">software engineer</b>. Learning at Frontend
+            Simplified, this is my first actual project. So far I am grasping
+            writing code and I'm developing an engineer mindset. Very excited
+            for this career change!
+            <br />
+            Find out more <b class="blue click" onclick="toggleModal()">about me</b> and my
+            <b class="blue">projects</b> below!
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/jordan-smith-122892267"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-square-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/tobi657"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="assets/Smith Jordan Resume 2026.pdf"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+       <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+      </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">Field Service Technician</h4>
+          <p class="modal__para">
+            I'm a 26 year old electrical <b class="blue">field service technician</b>, currently enrolled at <b class="blue">Frontend Simplified</b>, I am very versatile and ready to make this career transition.
+            <br>
+            I have professional experience from previous roles <b class="blue">programming I/O on HMI and UI</b>, and with light PLC work, along with the great projects I've worked on at <b class="blue">FES</b>.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-512/free-html-logo-icon-svg-download-png-2284975.png?f=webp&w=512" alt="">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="">
+              <span class="language__name">REACT</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Let's have a chat!
+          </h3>
+          <h3 class="modal__sub-title modal__sub-title--contact">
+            I am seeking a full career transition into tech.
+          </h3>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way!
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thank you for reaching out! Looking forward to speaking with you.
+          </div>
+        </div>
+      </div>
+      <img src="assets/semi circle.svg" class="shape shape--0">
+      <img src="assets/circle.svg" class="shape shape--1">
+      <img src="assets/squiggly.svg" class="shape shape--2">
+      <img src="assets/circle.svg" class="shape shape--3">
+      <img src="assets/triangle.svg" class="shape shape--4">
+      <img src="assets/circle.svg" class="shape shape--5">
+      <img src="assets/squiggly.svg" class="shape shape--6">
+      <img src="assets/circle.svg" class="shape shape--7">
+      <img src="assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="blue">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="assets/library_mockup.png"
+                  class="project__img"
+                  alt=""
+                  class=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Online Library Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quisquam, quod.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="assets/template_website.png"
+                  class="project__img"
+                  alt=""
+                  class=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Template Making Website
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quisquam, quod.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="assets/eportfolio.png"
+                  class="project__img"
+                  alt=""
+                  class=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">ePortfolio</h3>
+                  <h4 class="project__description--sub-title">HTML, CSS</h4>
+                  <p class="project__description--para">
+                    lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quisquam, quod.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img
+              src="assets/logo-no-bckgrnd.png"
+              class="footer__logo--img"
+              alt=""
+            />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/tobi657" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jordan-smith-122892267/" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="#" onclick="toggleModal()"
+              class="footer__social--link link__hover-effect link__hover-effect--white" 
+            >
+              Contact
+            </a>
+            <a
+              href="assets/Smith Jordan Resume 2026.pdf" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume
+            </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2026 Jordan Smith
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
