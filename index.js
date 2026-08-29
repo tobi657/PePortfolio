@@ -1,6 +1,6 @@
 let isModalOpen = false;
 let contrastToggle = false;
-const scaleFactor = 1 /20;
+const scaleFactor = 1 / 20;
 
 function moveBackground (event) {
   const shapes = document.querySelectorAll(".shape");
@@ -26,8 +26,8 @@ function toggleContrast () {
 
 function contact(event) {
   event.preventDefault();
-  const loading = document.querySelector('.modal__overlay--loading')
-  const success = document.querySelector('.modal__overlay--success')
+  const loading = document.querySelector('.modal__overlay--loading');
+  const success = document.querySelector('.modal__overlay--success');
   loading.classList += " modal__overlay--visible";
   emailjs.sendForm(
     "service_8kxtjrg",
